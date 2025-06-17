@@ -1,11 +1,15 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { DiretorEntity } from "src/diretor/diretor.entity";
+import { EstudiosEntity } from "src/estudios/estudios.entity";
+import { GenerosEntity } from "src/generos/generos.entity";
+import { UsuariosEntity } from "src/usuarios/usuarios.entity";
+import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity({ name: 'filmes'})
 export class FilmesEntity{
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
-    @Column({ nullable: false })
+    @Column({ nullable: false, length: 150})
     title: string;
 
     @Column({ nullable: false })
@@ -14,12 +18,20 @@ export class FilmesEntity{
     @Column({ nullable: false })
     launchDate: Date;
 
-    @Column({ nullable: false })
-    genre: string;
+    @ManyToMany(() => GenerosEntity, (generos) => generos.filmes)
+    @JoinTable({
+        name: 'filmes_generos',
+        joinColumn: { name: 'filmes_id'},
+        inverseJoinColumn: { name: 'generos_id' },
+    })
+    genre: GenerosEntity[];
 
-    @Column({ nullable: true })
-    director: string
+    @ManyToMany(() => DiretorEntity, (diretor) => diretor.filmes)
+    director: DiretorEntity[];
 
-    @Column({ nullable: true })
-    estudios: string
+    @ManyToMany(() => EstudiosEntity, (estudios) => estudios.filmes)
+    estudios: EstudiosEntity[];
+
+    @ManyToMany(() => UsuariosEntity, (usuarios) => usuarios.filmes)
+    usuarios: UsuariosEntity[];
 }
