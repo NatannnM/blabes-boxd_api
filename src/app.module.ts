@@ -4,11 +4,19 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { dataSourceOptions } from 'db/data-source';
 import { GenerosModule } from './generos/generos.module';
+import { FilmesModule } from './filmes/filmes.module';
+import { DiretorModule } from './diretor/diretor.module';
+import { EstudiosModule } from './estudios/estudios.module';
+import { UsuariosModule } from './usuarios/usuarios.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(dataSourceOptions),
-    GenerosModule
+    GenerosModule,
+    FilmesModule,
+    DiretorModule,
+    EstudiosModule,
+    UsuariosModule
   ],
   controllers: [AppController],
   providers: [AppService],

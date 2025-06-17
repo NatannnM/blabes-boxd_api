@@ -20,7 +20,7 @@ export class GenerosService {
         return this.generosRepository.save(generosEntity);
     }
 
-    async update(generosId: string, generosDto: GenerosDto){
+    update(generosId: string, generosDto: GenerosDto){
         return this.generosRepository.save({
             ...generosDto,
             id: generosId,
@@ -40,9 +40,9 @@ export class GenerosService {
     }
 
     async remove(generosId: string){
-        const find = await this.findById(generosId);
+        const generos = await this.findById(generosId);
 
-        await this.generosRepository.remove(find);
-        return {...find, id: generosId};
+        await this.generosRepository.remove(generos);
+        return {...generos, id: generosId};
     }
 }
