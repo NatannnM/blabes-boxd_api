@@ -1,0 +1,757 @@
+{
+	"info": {
+		"_postman_id": "0f838aae-3c0e-4580-b36c-d9e667412fac",
+		"name": "BlabesBoxd_Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45981503"
+	},
+	"item": [
+		{
+			"name": "Diretor",
+			"item": [
+				{
+					"name": "Listar Diretores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/diretor",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"diretor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Diretor por ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/diretor/12287b7b-147b-4a11-9aae-bdc558ff8b1b",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"diretor",
+								"12287b7b-147b-4a11-9aae-bdc558ff8b1b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar Novo Diretor",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"7b78c279-afa1-41cb-b9c3-95a711feb83e\",\r\n    \"nome\": \"John Krasinski\",\r\n    \"image\": \"https://br.web.img3.acsta.net/pictures/19/02/04/20/58/4023772.jpg\",\r\n    \"sobre\": \"É um ator e diretor norte-americano. É mais conhecido pelo seu papel como Jim Halpert na série da NBC, The Office, onde também atuou como produtor e diretor.\",\r\n    \"birthDate\": \"1979-10-20T03:00:00.000Z\",\r\n    \"filmes\": [\r\n        {\r\n            \"id\": \"06914905-375b-4e1f-9dd0-a7de90426e84\",\r\n            \"title\": \"Um Lugar Silencioso\",\r\n            \"image\": \"https://br.web.img3.acsta.net/pictures/18/03/01/20/26/0577579.jpg\",\r\n            \"launchDate\": \"2018-04-05T03:00:00.000Z\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/diretor",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"diretor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Diretor Existente(Denis)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"12287b7b-147b-4a11-9aae-bdc558ff8b1b\",\r\n        \"nome\": \"Denis Villeneuve\",\r\n        \"image\": \"https://cdn.britannica.com/49/220249-050-FD4A9CB4/Denis-Villeneuve-2018.jpg\",\r\n        \"sobre\": \"Denis Villeneuve nasceu dia 3 de outubro de 1967 em Québec, Canadá. É diretor e autor, conhecido pelo seu trabalho em Duna (2021), Duna: Parte 2 (2024) e Blade Runner 204(2017). É casado com Tanya Lapointe.\",\r\n        \"birthDate\": \"1967-10-03T03:00:00.000Z\",\r\n        \"filmes\": [\r\n            {\r\n                \"id\": \"d0ae0566-f5a5-41af-83d0-33973a2b830c\",\r\n                \"title\": \"Duna\",\r\n                \"image\": \"https://pgsramblings.wordpress.com/wp-content/uploads/2022/01/dune-2021.jpg?w=1024\",\r\n                \"launchDate\": \"2021-10-21T03:00:00.000Z\"\r\n            }\r\n        ]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/diretor/12287b7b-147b-4a11-9aae-bdc558ff8b1b",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"diretor",
+								"12287b7b-147b-4a11-9aae-bdc558ff8b1b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Diretor(Martin)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/diretor/976c556f-84aa-455d-b8aa-42ec01748877",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"diretor",
+								"976c556f-84aa-455d-b8aa-42ec01748877"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Estudios",
+			"item": [
+				{
+					"name": "Listar Estúdios",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/estudios",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estudios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Estúdio por ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/estudios/2012d032-84e8-4bd6-8d08-5f544f08d63e",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estudios",
+								"2012d032-84e8-4bd6-8d08-5f544f08d63e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar Novo Estúdio",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"54ff5ce4-9561-4ff2-8959-3ac5e945cabe\",\r\n        \"nome\": \"Universal\",\r\n        \"sobre\": \"A Universal Studios é um estúdio de cinema norte-americano de propriedade da Comcast e de sua subsidiária NBCUniversal.\",\r\n        \"launchDate\": \"2006-11-16T02:00:00.000Z\",\r\n        \"dono\": \"Comcast\",\r\n        \"image\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1wR_XeFh-hXmVk6MIj-kk6XTNy1eY7gYUUg&s\",\r\n        \"filmes\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/estudios",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estudios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Estúdio(Universal)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/estudios/54ff5ce4-9561-4ff2-8959-3ac5e945cabe",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estudios",
+								"54ff5ce4-9561-4ff2-8959-3ac5e945cabe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Estúdio Existente(Paramount)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"Platinum Dunes\",\r\n        \"sobre\": \"É uma produtora de cinema e televisão americana fundada em 2001 por Michael Bay , Brad Fuller e Andrew Form.\",\r\n        \"launchDate\": \"2001-11-01T03:06:28.000Z\",\r\n        \"dono\": \"Michael Bay\",\r\n        \"image\": \"https://static.wikitide.net/avidwiki/9/94/Platinumdunes1.jpeg\",\r\n        \"filmes\": [\r\n            {\r\n                \"id\": \"06914905-375b-4e1f-9dd0-a7de90426e84\",\r\n                \"title\": \"Um Lugar Silencioso\",\r\n                \"image\": \"https://br.web.img3.acsta.net/pictures/18/03/01/20/26/0577579.jpg\",\r\n                \"launchDate\": \"2018-04-05T03:00:00.000Z\"\r\n            }\r\n        ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/estudios/05e68f45-5cb2-4063-9439-326445e37367",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estudios",
+								"05e68f45-5cb2-4063-9439-326445e37367"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Filmes",
+			"item": [
+				{
+					"name": "Listar Filmes",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/filmes",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"filmes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Filmes por ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/filmes/06914905-375b-4e1f-9dd0-a7de90426e84",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"filmes",
+								"06914905-375b-4e1f-9dd0-a7de90426e84"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar Novo FIlme",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"9034d8dc-d53c-41f8-88e3-36f37740e300\",\r\n        \"title\": \"Um lugar silencioso parte 2\",\r\n        \"image\": \"https://br.web.img3.acsta.net/c_310_420/pictures/21/07/07/00/23/1802515.jpg\",\r\n        \"launchDate\": \"2021-07-21T03:00:00.000Z\",\r\n        \"genre\": [\r\n            {\r\n                \"id\": \"ac976fcb-4e71-4c46-9d14-d7f6fc54c60a\",\r\n                \"nome\": \"Drama\"\r\n            }\r\n        ],\r\n        \"director\": [\r\n            {\r\n                \"id\": \"7b78c279-afa1-41cb-b9c3-95a711feb83e\",\r\n                \"nome\": \"John Krasinski\",\r\n                \"image\": \"https://br.web.img3.acsta.net/pictures/19/02/04/20/58/4023772.jpg\",\r\n                \"sobre\": \"É um ator e diretor norte-americano. É mais conhecido pelo seu papel como Jim Halpert na série da NBC, The Office, onde também atuou como produtor e diretor.\",\r\n                \"birthDate\": \"1979-10-20T03:00:00.000Z\"\r\n            }\r\n        ],\r\n        \"estudios\": [\r\n            {\r\n                \"id\": \"05e68f45-5cb2-4063-9439-326445e37367\",\r\n                \"nome\": \"Platinum Dunes\",\r\n                \"sobre\": \"É uma produtora de cinema e televisão americana fundada em 2001 por Michael Bay , Brad Fuller e Andrew Form.\",\r\n                \"launchDate\": \"2001-11-01T03:06:28.000Z\",\r\n                \"dono\": \"Michael Bay\",\r\n                \"image\": \"https://static.wikitide.net/avidwiki/9/94/Platinumdunes1.jpeg\"\r\n            }\r\n        ],\r\n        \"usuarios\": [\r\n            {\r\n                \"id\": \"07656c84-3fff-41b5-b13b-6ba00286f0e7\",\r\n                \"name\": \"Francisco\",\r\n                \"nickname\": \"Chico Moedas\",\r\n                \"photo\": \"https://www.alagoas24horas.com.br/wp-content/uploads/2025/01/Chico-Moedas.jpeg\",\r\n                \"email\": \"chico@gmail.com\",\r\n                \"address\": \"Rua Melvin Jones\",\r\n                \"password\": \"87654321\",\r\n                \"phone\": \"48995587421\",\r\n                \"admin\": false\r\n            }\r\n        ]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/filmes",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"filmes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Filme Existente(Duna)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"title\": \"Duna Parte Dois\",\r\n        \"image\": \"https://br.web.img3.acsta.net/c_310_420/pictures/23/05/26/17/47/1900372.jpg\",\r\n        \"launchDate\": \"2024-02-29T03:00:00.000Z\",\r\n        \"genre\": [\r\n            {\r\n                \"id\": \"b6f6bdc8-53b3-4eef-bc3f-f6ed3636b000\",\r\n                \"nome\": \"Ação\"\r\n            },\r\n            {\r\n                \"id\": \"b85220d8-f2a4-4a9f-afac-ee2dad085ca5\",\r\n                \"nome\": \"Ficção Científica\"\r\n            }\r\n        ],\r\n        \"director\": [\r\n            {\r\n                \"id\": \"12287b7b-147b-4a11-9aae-bdc558ff8b1b\",\r\n                \"nome\": \"Denis Villeneuve\",\r\n                \"image\": \"https://cdn.britannica.com/49/220249-050-FD4A9CB4/Denis-Villeneuve-2018.jpg\",\r\n                \"sobre\": \"Denis Villeneuve nasceu dia 3 de outubro de 1967 em Québec, Canadá. É diretor e autor, conhecido pelo seu trabalho em Duna (2021), Duna: Parte 2 (2024) e Blade Runner 204(2017). É casado com Tanya Lapointe.\",\r\n                \"birthDate\": \"1967-10-03T03:00:00.000Z\"\r\n            }\r\n        ],\r\n        \"estudios\": [\r\n            {\r\n                \"id\": \"2012d032-84e8-4bd6-8d08-5f544f08d63e\",\r\n                \"nome\": \"Legendary Pictures\",\r\n                \"sobre\": \"É uma empresa de produção cinematográfica estadunidense, sediada em Burbank, Califórnia.\",\r\n                \"launchDate\": \"2005-06-01T03:00:00.000Z\",\r\n                \"dono\": \"Wanda Group\",\r\n                \"image\": \"https://static.wikia.nocookie.net/warner-bros-entertainment/images/3/36/Legendary_Pictures_logo.png/revision/latest?cb=20161105042657\"\r\n            }\r\n        ],\r\n        \"usuarios\": [\r\n            {\r\n                \"id\": \"7e4728d3-ffb5-4ad0-a7c5-c9275c2acb75\",\r\n                \"name\": \"Manoel Gomes\",\r\n                \"nickname\": \"Caneta Azul\",\r\n                \"photo\": \"https://agoralaguna.com.br/wp-content/uploads/2024/01/manoel-gomes.jpg\",\r\n                \"email\": \"manoel@gmail.com\",\r\n                \"address\": \"Rua Joaquim Nabuco\",\r\n                \"password\": \"12345678\",\r\n                \"phone\": \"48996658439\",\r\n                \"admin\": true\r\n            }\r\n        ]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/filmes/d0ae0566-f5a5-41af-83d0-33973a2b830c",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"filmes",
+								"d0ae0566-f5a5-41af-83d0-33973a2b830c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Filme(Bastardos)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/filmes/a779f483-995e-4e99-a63d-57b5057099a1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"filmes",
+								"a779f483-995e-4e99-a63d-57b5057099a1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gêneros",
+			"item": [
+				{
+					"name": "Listar Gêneros",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/generos",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"generos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Gêneros por ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/generos/b6f6bdc8-53b3-4eef-bc3f-f6ed3636b000",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"generos",
+								"b6f6bdc8-53b3-4eef-bc3f-f6ed3636b000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar Novo Gênero",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"id\":\"8ea86182-e237-4519-8556-dc827bf40da4\",\r\n    \"nome\":\"Romance\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/generos",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"generos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Gênero Existente(Terror)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Drama\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/generos/ac976fcb-4e71-4c46-9d14-d7f6fc54c60a",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"generos",
+								"ac976fcb-4e71-4c46-9d14-d7f6fc54c60a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Gênero(mistério)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/generos/fcfe32f6-45e6-4937-bd76-99a67f36c0ce",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"generos",
+								"fcfe32f6-45e6-4937-bd76-99a67f36c0ce"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuários",
+			"item": [
+				{
+					"name": "Listar Usuários",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/usuarios",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Usuário por ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/usuarios/07656c84-3fff-41b5-b13b-6ba00286f0e7",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios",
+								"07656c84-3fff-41b5-b13b-6ba00286f0e7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar Novo Usuário",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"c1acf509-fa86-445c-a87c-2514220371c5\",\r\n        \"name\": \"João Vitor\",\r\n        \"nickname\": \"Jãozin\",\r\n        \"photo\": \"https://images.pexels.com/photos/19557055/pexels-photo-19557055/free-photo-of-pic-du-midi-d-ossau.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500\",\r\n        \"email\": \"jao@gmail.com\",\r\n        \"address\": \"Rua Sebastião Nogueira\",\r\n        \"password\": \"87654321\",\r\n        \"phone\": \"48994483984\",\r\n        \"admin\": false,\r\n        \"filmes\": [\r\n            {\r\n                \"id\": \"9034d8dc-d53c-41f8-88e3-36f37740e300\",\r\n                \"title\": \"Um lugar silencioso parte 2\",\r\n                \"image\": \"https://br.web.img3.acsta.net/c_310_420/pictures/21/07/07/00/23/1802515.jpg\",\r\n                \"launchDate\": \"2021-07-21T03:00:00.000Z\"\r\n            }\r\n        ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/usuarios",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Usuário Existente(João)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Vínicius Santos\",\r\n    \"nickname\": \"Vini\",\r\n    \"photo\": \"https://i.pinimg.com/236x/9e/47/3c/9e473ce5df38c7a8c445f355e1e21855.jpg\",\r\n    \"email\": \"vinicius@gmail.com\",\r\n    \"address\": \"Rua Pedro Alcantara\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"48996672149\",\r\n    \"admin\": false,\r\n    \"filmes\": [\r\n        {\r\n            \"id\": \"d0ae0566-f5a5-41af-83d0-33973a2b830c\",\r\n            \"title\": \"Duna Parte Dois\",\r\n            \"image\": \"https://br.web.img3.acsta.net/c_310_420/pictures/23/05/26/17/47/1900372.jpg\",\r\n            \"launchDate\": \"2024-02-29T03:00:00.000Z\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/usuarios/c1acf509-fa86-445c-a87c-2514220371c5",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios",
+								"c1acf509-fa86-445c-a87c-2514220371c5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Usuário(João)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/usuarios/c1acf509-fa86-445c-a87c-2514220371c5",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios",
+								"c1acf509-fa86-445c-a87c-2514220371c5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Autenticação",
+			"item": [
+				{
+					"name": "Login com Sucesso",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"chico@gmail.com\",\r\n  \"password\": \"87654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login com Email errado",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"chico@adgmail.com\",\r\n  \"password\": \"87654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login com Senha errada",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"chico@gmail.com\",\r\n  \"password\": \"87654312321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
