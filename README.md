@@ -1,5 +1,6 @@
 Para rodar o projeto corretamente, é necessário seguir alguns passos, que são:
 - Baixar ou Clonar o repositório;
+- Caso ocorra qualquer problema de biblioteca, instale elas no terminal com "npm install -g @nestjs/cli" e "npm add pg reflect-metadata typeorm @nestjs/typeorm"
 - Criar o banco com o nome “blabesboxd”;
 - Ao abrir o projeto e com o terminar aberto na raiz dele, execute o comando “npm run typeorm-default -- migration:run” para criar as tabelas;
 - Após criar as tabelas, execute a seed com o comando “npm run typeorm-seed -- migration:run”, para povoar o banco de dados;
