@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "9108bf84-e4e3-403b-b978-80398ff6daeb",
+		"name": "Diretor_Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45981503"
+	},
+	"item": [
+		{
+			"name": "Listar Diretores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/diretor",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"diretor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Diretor por ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/diretor/12287b7b-147b-4a11-9aae-bdc558ff8b1b",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"diretor",
+						"12287b7b-147b-4a11-9aae-bdc558ff8b1b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Novo Diretor",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"7b78c279-afa1-41cb-b9c3-95a711feb83e\",\r\n    \"nome\": \"John Krasinski\",\r\n    \"image\": \"https://br.web.img3.acsta.net/pictures/19/02/04/20/58/4023772.jpg\",\r\n    \"sobre\": \"É um ator e diretor norte-americano. É mais conhecido pelo seu papel como Jim Halpert na série da NBC, The Office, onde também atuou como produtor e diretor.\",\r\n    \"birthDate\": \"1979-10-20T03:00:00.000Z\",\r\n    \"filmes\": [\r\n        {\r\n            \"id\": \"06914905-375b-4e1f-9dd0-a7de90426e84\",\r\n            \"title\": \"Um Lugar Silencioso\",\r\n            \"image\": \"https://br.web.img3.acsta.net/pictures/18/03/01/20/26/0577579.jpg\",\r\n            \"launchDate\": \"2018-04-05T03:00:00.000Z\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/diretor",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"diretor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Diretor Existente(Denis)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": \"12287b7b-147b-4a11-9aae-bdc558ff8b1b\",\r\n        \"nome\": \"Denis Villeneuve\",\r\n        \"image\": \"https://cdn.britannica.com/49/220249-050-FD4A9CB4/Denis-Villeneuve-2018.jpg\",\r\n        \"sobre\": \"Denis Villeneuve nasceu dia 3 de outubro de 1967 em Québec, Canadá. É diretor e autor, conhecido pelo seu trabalho em Duna (2021), Duna: Parte 2 (2024) e Blade Runner 204(2017). É casado com Tanya Lapointe.\",\r\n        \"birthDate\": \"1967-10-03T03:00:00.000Z\",\r\n        \"filmes\": [\r\n            {\r\n                \"id\": \"d0ae0566-f5a5-41af-83d0-33973a2b830c\",\r\n                \"title\": \"Duna\",\r\n                \"image\": \"https://pgsramblings.wordpress.com/wp-content/uploads/2022/01/dune-2021.jpg?w=1024\",\r\n                \"launchDate\": \"2021-10-21T03:00:00.000Z\"\r\n            }\r\n        ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/diretor/12287b7b-147b-4a11-9aae-bdc558ff8b1b",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"diretor",
+						"12287b7b-147b-4a11-9aae-bdc558ff8b1b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excluir Diretor(Martin)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/diretor/976c556f-84aa-455d-b8aa-42ec01748877",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"diretor",
+						"976c556f-84aa-455d-b8aa-42ec01748877"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

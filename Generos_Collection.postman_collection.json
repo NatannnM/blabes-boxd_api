@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "63ccc707-dc1f-47f5-9202-c2f2ca5da3d1",
+		"name": "Generos_Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45981503"
+	},
+	"item": [
+		{
+			"name": "Listar Gêneros",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/generos",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"generos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Gêneros por ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/generos/b6f6bdc8-53b3-4eef-bc3f-f6ed3636b000",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"generos",
+						"b6f6bdc8-53b3-4eef-bc3f-f6ed3636b000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Novo Gênero",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"id\":\"8ea86182-e237-4519-8556-dc827bf40da4\",\r\n    \"nome\":\"Romance\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/generos",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"generos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Gênero Existente(Terror)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Drama\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/generos/ac976fcb-4e71-4c46-9d14-d7f6fc54c60a",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"generos",
+						"ac976fcb-4e71-4c46-9d14-d7f6fc54c60a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excluir Gênero(mistério)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/generos/fcfe32f6-45e6-4937-bd76-99a67f36c0ce",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"generos",
+						"fcfe32f6-45e6-4937-bd76-99a67f36c0ce"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
