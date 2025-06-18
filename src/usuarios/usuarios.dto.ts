@@ -1,4 +1,4 @@
-import { ArrayNotEmpty, ArrayUnique, IsArray, IsNotEmpty, IsOptional, IsString, IsUUID, MaxLength, ValidateNested } from "class-validator";
+import { IsArray, IsNotEmpty, IsOptional, IsString, IsUUID, MaxLength, ValidateNested } from "class-validator";
 import { FilmesDto } from "src/filmes/filmes.dto";
 
 export class UsuariosDto{

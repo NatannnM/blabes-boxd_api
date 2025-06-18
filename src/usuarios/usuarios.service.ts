@@ -27,6 +27,10 @@ export class UsuariosService{
         return usuarios;
     }
 
+    async findByEmail(email: string) {
+        return this.usuariosRepository.findOne({ where: { email } });
+    }
+
     async create(usuariosDto: UsuariosDto){
         await this.validateBusinessRules(usuariosDto);
         const usuarios = this.usuariosRepository.create(usuariosDto);
