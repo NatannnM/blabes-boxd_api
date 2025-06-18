@@ -12,7 +12,8 @@ import { UsuariosService } from "./usuarios.service";
             FilmesEntity
         ])],
     controllers: [UsuariosController],
-    providers: [UsuariosService]
+    providers: [UsuariosService],
+    exports: [UsuariosService]
 })
 
 export class UsuariosModule {}
