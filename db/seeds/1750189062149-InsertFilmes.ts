@@ -7,7 +7,8 @@ export class InsertFilmes1750189062149 implements MigrationInterface {
             INSERT INTO filmes(id, title, image, "launchDate")
             VALUES
             ('d0ae0566-f5a5-41af-83d0-33973a2b830c', 'Duna', 'https://pgsramblings.wordpress.com/wp-content/uploads/2022/01/dune-2021.jpg?w=1024', '2021-10-21'),
-            ('06914905-375b-4e1f-9dd0-a7de90426e84', 'Um Lugar Silencioso', 'https://br.web.img3.acsta.net/pictures/18/03/01/20/26/0577579.jpg', '2018-04-05')
+            ('06914905-375b-4e1f-9dd0-a7de90426e84', 'Um Lugar Silencioso', 'https://br.web.img3.acsta.net/pictures/18/03/01/20/26/0577579.jpg', '2018-04-05'),
+            ('a779f483-995e-4e99-a63d-57b5057099a1', 'Bastardos Inglórios', 'https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/90/43/36/20096333.jpg', '2009-10-09')            
             `)
     }
 
