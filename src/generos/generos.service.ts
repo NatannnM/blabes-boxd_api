@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from "@nestjs/common";
+import { BadRequestException, Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { GenerosEntity } from "./generos.entity";
 import { Repository } from "typeorm";
@@ -15,12 +15,14 @@ export class GenerosService {
         return this.generosRepository.find();
     }
 
-    create(generosDto: GenerosDto){
+    async create(generosDto: GenerosDto){
+        await this.validateBusinessRules(generosDto);
         const generosEntity = this.generosRepository.create(generosDto);
         return this.generosRepository.save(generosEntity);
     }
 
-    update(generosId: string, generosDto: GenerosDto){
+    async update(generosId: string, generosDto: GenerosDto){
+        await this.validateBusinessRules(generosDto, generosId);
         return this.generosRepository.save({
             ...generosDto,
             id: generosId,
@@ -40,9 +42,33 @@ export class GenerosService {
     }
 
     async remove(generosId: string){
+        await this.validateRemoveGenero(generosId);
         const generos = await this.findById(generosId);
-
         await this.generosRepository.remove(generos);
         return {...generos, id: generosId};
+    }
+
+    private async validateBusinessRules(generosDto: GenerosDto, idToIgnore?: string){
+        await this.validateNomeGenero(generosDto, idToIgnore);
+
+    }
+
+    private async validateNomeGenero(generosDto: GenerosDto, idToIgnore: string | undefined){
+        const existe = await this.generosRepository.findOne({
+            where: { nome: generosDto.nome},
+        });
+        if(existe && existe.id !== idToIgnore){
+            throw new BadRequestException('Já existe um gênero com esse nome!');
+        }
+    }
+
+    private async validateRemoveGenero(generosId: string){
+        const genero = await this.generosRepository.findOne({
+            where: { id: generosId },
+            relations: ['filmes']
+        });
+        if(genero?.filmes && genero.filmes.length > 0){
+            throw new BadRequestException('Não é possível excluir um gênero associado a algum filme.');
+        }
     }
 }
