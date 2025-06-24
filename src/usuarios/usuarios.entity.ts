@@ -1,5 +1,5 @@
-import { FilmesEntity } from "src/filmes/filmes.entity";
-import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Usuarios_FilmesEntity } from "src/usuarios_filmes/usuarios_filmes.entity";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity({ name: 'usuarios'})
 export class UsuariosEntity{
@@ -30,11 +30,6 @@ export class UsuariosEntity{
     @Column({nullable:false})
     admin: boolean;
 
-    @ManyToMany(() => FilmesEntity, (filmes) => filmes.usuarios)
-    @JoinTable({
-            name: 'usuarios_filmes',
-            joinColumn: { name: 'usuarios_id'},
-            inverseJoinColumn: { name: 'filmes_id' },
-    })
-    filmes: FilmesEntity[];
+    @OneToMany(() => Usuarios_FilmesEntity, (uf) => uf.usuarios)
+    relacao_usuario: Usuarios_FilmesEntity
 }

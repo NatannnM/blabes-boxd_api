@@ -35,9 +35,4 @@ export class FilmesDto{
     @ValidateNested({message: 'O objeto deve ser do tipo estudios' })
     @IsArray({ message: 'O campo estudios deve ser um array' })
     estudios: EstudiosDto[];
-
-    @ValidateNested({message: 'O objeto deve ser do tipo usuarios' })
-    @IsArray({ message: 'O campo usuarios deve ser um array' })
-    @IsOptional()
-    usuarios: UsuariosDto[];
 }

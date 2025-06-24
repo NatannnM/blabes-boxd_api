@@ -9,6 +9,7 @@ import { DiretorModule } from './diretor/diretor.module';
 import { EstudiosModule } from './estudios/estudios.module';
 import { UsuariosModule } from './usuarios/usuarios.module';
 import { AuthModule } from './auth/auth.module';
+import { Usuarios_FilmesModule } from './usuarios_filmes/usuarios_filmes.module';
 
 @Module({
   imports: [
@@ -18,7 +19,8 @@ import { AuthModule } from './auth/auth.module';
     DiretorModule,
     EstudiosModule,
     UsuariosModule,
-    AuthModule
+    AuthModule,
+    Usuarios_FilmesModule
   ],
   controllers: [AppController],
   providers: [AppService],

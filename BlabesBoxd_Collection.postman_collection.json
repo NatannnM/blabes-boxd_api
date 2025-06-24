@@ -752,6 +752,190 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "usuarios_filmes",
+			"item": [
+				{
+					"name": "Listar Relação Usuários e Filmes",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/usuarios_filmes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios_filmes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar Relação Usuários e Filmes",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"4fc4f497-c443-4ffc-89cb-8f2b9a2e26a5\",\r\n    \"nota\": 4.5, \r\n    \"review\":\"Muito bom\",\r\n    \"usuariosId\": \"07656c84-3fff-41b5-b13b-6ba00286f0e7\",\r\n    \"filmesId\": \"d0ae0566-f5a5-41af-83d0-33973a2b830c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/usuarios_filmes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios_filmes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Relação Usuários e Filmes por ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/usuarios_filmes/978c9b82-1300-4e2b-8d8f-c72590a5a006",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios_filmes",
+								"978c9b82-1300-4e2b-8d8f-c72590a5a006"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Relação Usuários e Filmes por ID do Usuário",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/usuarios_filmes/usuarios/07656c84-3fff-41b5-b13b-6ba00286f0e7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios_filmes",
+								"usuarios",
+								"07656c84-3fff-41b5-b13b-6ba00286f0e7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Relação Usuários e Filmes por ID do FIlme",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/usuarios_filmes/filmes/d0ae0566-f5a5-41af-83d0-33973a2b830c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios_filmes",
+								"filmes",
+								"d0ae0566-f5a5-41af-83d0-33973a2b830c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Relação Usuários e Filmes(filme duna 2 e usuário francisco)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nota\": 3.5, \r\n    \"review\":\"É um filme bem legal\",\r\n    \"usuariosId\": \"07656c84-3fff-41b5-b13b-6ba00286f0e7\",\r\n    \"filmesId\": \"0e820349-5b0b-4fc6-9287-fa6919c5a910\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/usuarios_filmes/978c9b82-1300-4e2b-8d8f-c72590a5a006",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios_filmes",
+								"978c9b82-1300-4e2b-8d8f-c72590a5a006"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Relação Usuários e Filmes(Filme duna 2 e usuário francisco)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/usuarios_filmes/978c9b82-1300-4e2b-8d8f-c72590a5a006",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios_filmes",
+								"978c9b82-1300-4e2b-8d8f-c72590a5a006"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

@@ -2,28 +2,25 @@ import { BadRequestException, Injectable, NotFoundException } from "@nestjs/comm
 import { InjectRepository } from "@nestjs/typeorm";
 import { UsuariosEntity } from "./usuarios.entity";
 import { Repository } from "typeorm";
-import { FilmesEntity } from "src/filmes/filmes.entity";
 import { UsuariosDto } from "./usuarios.dto";
 
 @Injectable()
 export class UsuariosService{
     constructor(
         @InjectRepository(UsuariosEntity)
-        private usuariosRepository: Repository<UsuariosEntity>,
-        @InjectRepository(FilmesEntity)
-        private filmesRepository: Repository<FilmesEntity>,
+        private usuariosRepository: Repository<UsuariosEntity>
     ){}
 
     async findAll(){
-        return await this.usuariosRepository.find({ relations: ['filmes']});
+        return await this.usuariosRepository.find({ relations: ['relacao_usuario']});
     }
 
     async findById(id: string){
         const usuarios = await this.usuariosRepository.findOne({
             where: { id },
-            relations: ['filmes'],
+            relations: ['usuarios_filmes'],
         });
-        if(!usuarios) throw new NotFoundException('Usuário não encontrado');
+        if(!usuarios) throw new NotFoundException('relacao_usuario');
         return usuarios;
     }
 

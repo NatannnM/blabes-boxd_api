@@ -7,12 +7,15 @@ export class Usuarios_FilmesEntity{
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
-    @ManyToOne(() => UsuariosEntity, (usuario) => usuario.filmes)
+    @ManyToOne(() => UsuariosEntity, (usuario) => usuario.relacao_usuario)
     usuarios: UsuariosEntity;
 
-    @ManyToOne(() => FilmesEntity, (filmes) => filmes.usuarios)
+    @ManyToOne(() => FilmesEntity, (filmes) => filmes.relacao_filmes)
     filmes: FilmesEntity;
 
     @Column('decimal', {precision: 2, scale: 1})
     nota: number;
+
+    @Column({nullable:true, length: 3000})
+    review: string;
 }
