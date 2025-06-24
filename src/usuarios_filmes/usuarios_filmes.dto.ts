@@ -14,7 +14,7 @@ export class Usuarios_FilmesDTO{
 
     @IsNumber({}, { message: 'O campo nota deve ser um número' })
     @Min(0.5, { message: 'O campo nota deve ser maior ou igual a 0,5' })
-    @Max(5.0, { message: 'O campo nota deve ser menor ou igual a 5'})
+    @Max(10, { message: 'O campo nota deve ser menor ou igual a 10'})
     nota: number;
 
     @IsString({ message: 'O campo review deve ser do tipo string'})

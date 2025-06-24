@@ -18,7 +18,7 @@ export class UsuariosService{
     async findById(id: string){
         const usuarios = await this.usuariosRepository.findOne({
             where: { id },
-            relations: ['usuarios_filmes'],
+            relations: ['relacao_usuario'],
         });
         if(!usuarios) throw new NotFoundException('relacao_usuario');
         return usuarios;
