@@ -2,7 +2,8 @@ import { DiretorEntity } from "src/diretor/diretor.entity";
 import { EstudiosEntity } from "src/estudios/estudios.entity";
 import { GenerosEntity } from "src/generos/generos.entity";
 import { UsuariosEntity } from "src/usuarios/usuarios.entity";
-import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Usuarios_FilmesEntity } from "src/usuarios_filmes/usuarios_filmes.entity";
+import { Column, Entity, JoinTable, ManyToMany, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity({ name: 'filmes'})
 export class FilmesEntity{
@@ -32,6 +33,6 @@ export class FilmesEntity{
     @ManyToMany(() => EstudiosEntity, (estudios) => estudios.filmes)
     estudios: EstudiosEntity[];
 
-    @ManyToMany(() => UsuariosEntity, (usuarios) => usuarios.filmes)
-    usuarios: UsuariosEntity[];
+    @OneToMany(() => Usuarios_FilmesEntity, (uf) => uf.filmes)
+    relacao_filmes: Usuarios_FilmesEntity
 }

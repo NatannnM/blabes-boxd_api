@@ -9,19 +9,17 @@ import { FilmesDto } from "./filmes.dto";
 export class FilmesService {
     constructor(
         @InjectRepository(FilmesEntity)
-        private filmesRepository: Repository<FilmesEntity>,
-        @InjectRepository(GenerosEntity)
-        private generosRepository: Repository<GenerosEntity>
+        private filmesRepository: Repository<FilmesEntity>
     ){}
 
     async findAll(){
-        return await this.filmesRepository.find({ relations: ['genre', 'director', 'estudios', 'usuarios']});
+        return await this.filmesRepository.find({ relations: ['genre', 'director', 'estudios', 'relacao_filmes']});
     }
 
     async findById(id: string){
         const filmes = await this.filmesRepository.findOne({
             where: { id },
-            relations: ['genre', 'director', 'estudios', 'usuarios'],
+            relations: ['genre', 'director', 'estudios', 'relacao_filmes'],
         });
         if(!filmes) throw new NotFoundException('Filme não encontrado');
         return filmes;
@@ -31,7 +29,7 @@ export class FilmesService {
         await this.validateBusinessRules(filmesDto);
         const filmes = this.filmesRepository.create(filmesDto);
         return this.filmesRepository.save(filmes);
-    }
+    }   
     
     async update(filmesId: string, filmesDto: FilmesDto){
         await this.validateBusinessRules(filmesDto, filmesId);
@@ -49,7 +47,6 @@ export class FilmesService {
     private async validateBusinessRules(filmesDto: FilmesDto, idToIgnore?: string){
             await this.validateDiretorUnico(filmesDto.director);
             await this.validateEstudiosUnicos(filmesDto.estudios);
-            await this.validateUsuariosUnicos(filmesDto.usuarios);
             await this.validateImagem(filmesDto.image);
             await this.validateDataFilmeVSNascimentoDiretor(filmesDto);
     }
@@ -73,17 +70,6 @@ export class FilmesService {
     
         if (set.size !== id.length) {
           throw new BadRequestException('O filme não pode estar vinculado mais de uma vez ao mesmo Estúdio.');
-        }
-    }
-
-    private validateUsuariosUnicos(usuarios: {id: string}[] | undefined) {
-        if (!usuarios || usuarios.length === 0) return;
-    
-        const id = usuarios.map(u => u.id);
-        const set = new Set(id);
-    
-        if (set.size !== id.length) {
-          throw new BadRequestException('O filme não pode estar vinculado mais de uma vez ao mesmo usuário.');
         }
     }
 

@@ -1,5 +1,5 @@
 import { IsArray, IsNotEmpty, IsOptional, IsString, IsUUID, MaxLength, ValidateNested } from "class-validator";
-import { FilmesDto } from "src/filmes/filmes.dto";
+
 
 export class UsuariosDto{
     @IsUUID('4', { message: 'O campo ID deve ser um UUID'})
@@ -39,9 +39,4 @@ export class UsuariosDto{
 
     @IsNotEmpty({ message: 'O campo admin é obrigatório!'})
     admin: boolean;
-    
-    @ValidateNested({message: 'O objeto deve ser do tipo filme'})
-    @IsArray({ message: 'O campo filmes deve ser um array' })
-    @IsOptional()
-    filmes: FilmesDto[];
 }
