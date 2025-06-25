@@ -131,6 +131,97 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Regras de Negócio 1 - A data de nascimento do diretor não pode ser futura",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"2180ac7a-eca4-45b2-8bfb-9b7a658d8180\",\r\n        \"nome\": \"John Krasinski \",\r\n        \"image\": \"https://br.web.img3.acsta.net/pictures/19/02/04/20/58/4023772.jpg\",\r\n        \"sobre\": \"É um ator e diretor norte-americano. É mais conhecido pelo seu papel como Jim Halpert na série da NBC, The Office, onde também atuou como produtor e diretor.\",\r\n        \"birthDate\": \"2025-10-20T03:00:00.000Z\",\r\n        \"filmes\": [\r\n            {\r\n                \"id\": \"0e820349-5b0b-4fc6-9287-fa6919c5a910\",\r\n                \"title\": \"Um Lugar Silencioso - Parte Dois\",\r\n                \"image\": \"https://br.web.img3.acsta.net/pictures/21/07/07/00/23/1802515.jpg\",\r\n                \"launchDate\": \"2021-07-21T03:00:00.000Z\"\r\n            }]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/diretor",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"diretor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Regras de Negócio 2 - Não é possível deletar um diretor associado a algum filme",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/diretor/7b78c279-afa1-41cb-b9c3-95a711feb83e",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"diretor",
+								"7b78c279-afa1-41cb-b9c3-95a711feb83e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Regras de Negócio 3 - O diretor não pode estar vinculado mais de uma vez ao mesmo filme",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"2180ac7a-eca4-45b2-8bfb-9b7a658d8180\",\r\n        \"nome\": \"John Krasinski \",\r\n        \"image\": \"https://br.web.img3.acsta.net/pictures/19/02/04/20/58/4023772.jpg\",\r\n        \"sobre\": \"É um ator e diretor norte-americano. É mais conhecido pelo seu papel como Jim Halpert na série da NBC, The Office, onde também atuou como produtor e diretor.\",\r\n        \"birthDate\": \"1981-10-20T03:00:00.000Z\",\r\n        \"filmes\": [\r\n            {\r\n                \"id\": \"0e820349-5b0b-4fc6-9287-fa6919c5a910\",\r\n                \"title\": \"Um Lugar Silencioso - Parte Dois\",\r\n                \"image\": \"https://br.web.img3.acsta.net/pictures/21/07/07/00/23/1802515.jpg\",\r\n                \"launchDate\": \"2021-07-21T03:00:00.000Z\"\r\n            },\r\n            {\r\n                \"id\": \"0e820349-5b0b-4fc6-9287-fa6919c5a910\",\r\n                \"title\": \"Um Lugar Silencioso - Parte Dois\",\r\n                \"image\": \"https://br.web.img3.acsta.net/pictures/21/07/07/00/23/1802515.jpg\",\r\n                \"launchDate\": \"2021-07-21T03:00:00.000Z\"\r\n            }\r\n            ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/diretor",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"diretor"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -252,6 +343,97 @@
 							"path": [
 								"estudios",
 								"05e68f45-5cb2-4063-9439-326445e37367"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Regras de Negócio 1 - A data de lançamento do estúdio não pode ser futura",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"c7e08ed0-704b-4fab-884b-dfc7c4964684\",\r\n        \"nome\": \"Legendary Pictures\",\r\n        \"sobre\": \"É uma empresa de produção cinematográfica estadunidense, sediada em Burbank, Califórnia.\",\r\n        \"launchDate\": \"2026-06-01T03:00:00.000Z\",\r\n        \"dono\": \"Wanda Group\",\r\n        \"image\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMgbdBn0WUZKYVvR2YKIvzlPxZaLioImB7ArIv7_ngPDaZ72zCnAbp3Jb5-kAjrtGe0I8&usqp=CAU\",\r\n        \"filmes\": [\r\n            {\r\n                \"id\": \"d0ae0566-f5a5-41af-83d0-33973a2b830c\",\r\n                \"title\": \"Duna Parte Dois\",\r\n                \"image\": \"https://br.web.img3.acsta.net/c_310_420/pictures/23/05/26/17/47/1900372.jpg\",\r\n                \"launchDate\": \"2024-02-29T03:00:00.000Z\"\r\n            }\r\n        ]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/estudios",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estudios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Regras de Negócio 2 - O campo sobre deve conter pelo menos 30 caracteres",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"c7e08ed0-704b-4fab-884b-dfc7c4964684\",\r\n        \"nome\": \"Legendary Pictures\",\r\n        \"sobre\": \"É uma e\",\r\n        \"launchDate\": \"2008-06-01T03:00:00.000Z\",\r\n        \"dono\": \"Wanda Group\",\r\n        \"image\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMgbdBn0WUZKYVvR2YKIvzlPxZaLioImB7ArIv7_ngPDaZ72zCnAbp3Jb5-kAjrtGe0I8&usqp=CAU\",\r\n        \"filmes\": [\r\n            {\r\n                \"id\": \"d0ae0566-f5a5-41af-83d0-33973a2b830c\",\r\n                \"title\": \"Duna Parte Dois\",\r\n                \"image\": \"https://br.web.img3.acsta.net/c_310_420/pictures/23/05/26/17/47/1900372.jpg\",\r\n                \"launchDate\": \"2024-02-29T03:00:00.000Z\"\r\n            }\r\n        ]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/estudios",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estudios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Regras de Negócio 3 - Não é possível excluir um estúdio associado a um filme",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/estudios/2012d032-84e8-4bd6-8d08-5f544f08d63e",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estudios",
+								"2012d032-84e8-4bd6-8d08-5f544f08d63e"
 							]
 						}
 					},
@@ -387,6 +569,126 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Regras de Negócio 1 - Um filme não pode estar vinculado mais de uma vez ao mesmo diretor",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"2a61ea31-06dc-4e34-96a5-b0d1eebb2485\",\r\n        \"title\": \"Um Lugar Silencioso - Dia um\",\r\n        \"image\": \"https://br.web.img3.acsta.net/img/3d/a5/3da55e2824a79a6b3ba13b44c551d3b3.jpg\",\r\n        \"launchDate\": \"2024-07-21T03:00:00.000Z\",\r\n        \"genre\": [\r\n            {\r\n                \"id\": \"ac976fcb-4e71-4c46-9d14-d7f6fc54c60a\",\r\n                \"nome\": \"Drama\"\r\n            }\r\n        ],\r\n        \"director\": [\r\n            {\r\n                \"id\": \"7b78c279-afa1-41cb-b9c3-95a711feb83e\",\r\n                \"nome\": \"John Krasinski \",\r\n                \"image\": \"https://br.web.img3.acsta.net/pictures/19/02/04/20/58/4023772.jpg\",\r\n                \"sobre\": \"É um ator e diretor norte-americano. É mais conhecido pelo seu papel como Jim Halpert na série da NBC, The Office, onde também atuou como produtor e diretor.\",\r\n                \"birthDate\": \"1981-10-20T03:00:00.000Z\"\r\n            },\r\n            {\r\n                \"id\": \"7b78c279-afa1-41cb-b9c3-95a711feb83e\",\r\n                \"nome\": \"John Krasinski \",\r\n                \"image\": \"https://br.web.img3.acsta.net/pictures/19/02/04/20/58/4023772.jpg\",\r\n                \"sobre\": \"É um ator e diretor norte-americano. É mais conhecido pelo seu papel como Jim Halpert na série da NBC, The Office, onde também atuou como produtor e diretor.\",\r\n                \"birthDate\": \"1981-10-20T03:00:00.000Z\"\r\n            }\r\n        ],\r\n        \"estudios\": [\r\n            {\r\n                \"id\": \"05e68f45-5cb2-4063-9439-326445e37367\",\r\n                \"nome\": \"Platinum Dunes\",\r\n                \"sobre\": \"É uma produtora de cinema e televisão americana fundada em 2001 por Michael Bay , Brad Fuller e Andrew Form.\",\r\n                \"launchDate\": \"2001-11-01T03:06:28.000Z\",\r\n                \"dono\": \"Michael Bay\",\r\n                \"image\": \"https://static.wikitide.net/avidwiki/9/94/Platinumdunes1.jpeg\"\r\n            }\r\n        ],\r\n        \"relacao_filmes\": []\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/filmes",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"filmes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Regras de Negócio 2 - Um filme não pode estar vinculado mais de uma vez ao mesmo estúdio",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"2a61ea31-06dc-4e34-96a5-b0d1eebb2485\",\r\n        \"title\": \"Um Lugar Silencioso - Dia um\",\r\n        \"image\": \"https://br.web.img3.acsta.net/img/3d/a5/3da55e2824a79a6b3ba13b44c551d3b3.jpg\",\r\n        \"launchDate\": \"2024-07-21T03:00:00.000Z\",\r\n        \"genre\": [\r\n            {\r\n                \"id\": \"ac976fcb-4e71-4c46-9d14-d7f6fc54c60a\",\r\n                \"nome\": \"Drama\"\r\n            }\r\n        ],\r\n        \"director\": [\r\n            {\r\n                \"id\": \"7b78c279-afa1-41cb-b9c3-95a711feb83e\",\r\n                \"nome\": \"John Krasinski \",\r\n                \"image\": \"https://br.web.img3.acsta.net/pictures/19/02/04/20/58/4023772.jpg\",\r\n                \"sobre\": \"É um ator e diretor norte-americano. É mais conhecido pelo seu papel como Jim Halpert na série da NBC, The Office, onde também atuou como produtor e diretor.\",\r\n                \"birthDate\": \"1981-10-20T03:00:00.000Z\"\r\n            }\r\n        ],\r\n        \"estudios\": [\r\n            {\r\n                \"id\": \"05e68f45-5cb2-4063-9439-326445e37367\",\r\n                \"nome\": \"Platinum Dunes\",\r\n                \"sobre\": \"É uma produtora de cinema e televisão americana fundada em 2001 por Michael Bay , Brad Fuller e Andrew Form.\",\r\n                \"launchDate\": \"2001-11-01T03:06:28.000Z\",\r\n                \"dono\": \"Michael Bay\",\r\n                \"image\": \"https://static.wikitide.net/avidwiki/9/94/Platinumdunes1.jpeg\"\r\n            },\r\n            {\r\n                \"id\": \"05e68f45-5cb2-4063-9439-326445e37367\",\r\n                \"nome\": \"Platinum Dunes\",\r\n                \"sobre\": \"É uma produtora de cinema e televisão americana fundada em 2001 por Michael Bay , Brad Fuller e Andrew Form.\",\r\n                \"launchDate\": \"2001-11-01T03:06:28.000Z\",\r\n                \"dono\": \"Michael Bay\",\r\n                \"image\": \"https://static.wikitide.net/avidwiki/9/94/Platinumdunes1.jpeg\"\r\n            }\r\n        ],\r\n        \"relacao_filmes\": []\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/filmes",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"filmes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Regras de Negócio 3 - A imagem deve ter uma URL válida",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"2a61ea31-06dc-4e34-96a5-b0d1eebb2485\",\r\n        \"title\": \"Um Lugar Silencioso - Dia um\",\r\n        \"image\": \".net/img/3d/a5/3da55e2824a79a6b3ba13b44c551d3b3.jpg\",\r\n        \"launchDate\": \"2024-07-21T03:00:00.000Z\",\r\n        \"genre\": [\r\n            {\r\n                \"id\": \"ac976fcb-4e71-4c46-9d14-d7f6fc54c60a\",\r\n                \"nome\": \"Drama\"\r\n            }\r\n        ],\r\n        \"director\": [\r\n            {\r\n                \"id\": \"7b78c279-afa1-41cb-b9c3-95a711feb83e\",\r\n                \"nome\": \"John Krasinski \",\r\n                \"image\": \"https://br.web.img3.acsta.net/pictures/19/02/04/20/58/4023772.jpg\",\r\n                \"sobre\": \"É um ator e diretor norte-americano. É mais conhecido pelo seu papel como Jim Halpert na série da NBC, The Office, onde também atuou como produtor e diretor.\",\r\n                \"birthDate\": \"1981-10-20T03:00:00.000Z\"\r\n            }\r\n        ],\r\n        \"estudios\": [\r\n            {\r\n                \"id\": \"05e68f45-5cb2-4063-9439-326445e37367\",\r\n                \"nome\": \"Platinum Dunes\",\r\n                \"sobre\": \"É uma produtora de cinema e televisão americana fundada em 2001 por Michael Bay , Brad Fuller e Andrew Form.\",\r\n                \"launchDate\": \"2001-11-01T03:06:28.000Z\",\r\n                \"dono\": \"Michael Bay\",\r\n                \"image\": \"https://static.wikitide.net/avidwiki/9/94/Platinumdunes1.jpeg\"\r\n            }\r\n        ],\r\n        \"relacao_filmes\": []\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/filmes",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"filmes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Regras de Negócio 4 - A data de lançamento do filme não pode ser anterior ao nascimento do diretor",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"2a61ea31-06dc-4e34-96a5-b0d1eebb2485\",\r\n        \"title\": \"Um Lugar Silencioso - Dia um\",\r\n        \"image\": \"https://br.web.img3.acsta.net/img/3d/a5/3da55e2824a79a6b3ba13b44c551d3b3.jpgmg/3d/a5/3da55e2824a79a6b3ba13b44c551d3b3.jpg\",\r\n        \"launchDate\": \"1980-07-21T03:00:00.000Z\",\r\n        \"genre\": [\r\n            {\r\n                \"id\": \"ac976fcb-4e71-4c46-9d14-d7f6fc54c60a\",\r\n                \"nome\": \"Drama\"\r\n            }\r\n        ],\r\n        \"director\": [\r\n            {\r\n                \"id\": \"7b78c279-afa1-41cb-b9c3-95a711feb83e\",\r\n                \"nome\": \"John Krasinski \",\r\n                \"image\": \"https://br.web.img3.acsta.net/pictures/19/02/04/20/58/4023772.jpg\",\r\n                \"sobre\": \"É um ator e diretor norte-americano. É mais conhecido pelo seu papel como Jim Halpert na série da NBC, The Office, onde também atuou como produtor e diretor.\",\r\n                \"birthDate\": \"1981-10-20T03:00:00.000Z\"\r\n            }\r\n        ],\r\n        \"estudios\": [\r\n            {\r\n                \"id\": \"05e68f45-5cb2-4063-9439-326445e37367\",\r\n                \"nome\": \"Platinum Dunes\",\r\n                \"sobre\": \"É uma produtora de cinema e televisão americana fundada em 2001 por Michael Bay , Brad Fuller e Andrew Form.\",\r\n                \"launchDate\": \"2001-11-01T03:06:28.000Z\",\r\n                \"dono\": \"Michael Bay\",\r\n                \"image\": \"https://static.wikitide.net/avidwiki/9/94/Platinumdunes1.jpeg\"\r\n            }\r\n        ],\r\n        \"relacao_filmes\": []\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/filmes",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"filmes"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -518,6 +820,58 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Regras de Negócio 1 - Gênero não pode se repetir",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"fcd1c474-a545-46ac-a38d-c3fd9b6603e6\",\r\n        \"nome\": \"Ação\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/generos",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"generos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Regras de Negócio 2 - Gênero associado a algum filme não pode ser apagado(ficção científica está associado a duna)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/generos/b85220d8-f2a4-4a9f-afac-ee2dad085ca5",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"generos",
+								"b85220d8-f2a4-4a9f-afac-ee2dad085ca5"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -645,6 +999,96 @@
 							"path": [
 								"usuarios",
 								"c1acf509-fa86-445c-a87c-2514220371c5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Regras de negócio 1 - Nickname não pode se repetir",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"a0bcd4b3-1f93-481f-b1dc-5e3013a779a7\",\r\n        \"name\": \"Vitor\",\r\n        \"nickname\": \"Chico Moedas\",\r\n        \"photo\": \"https://cdn-icons-png.flaticon.com/512/3135/3135715.png\",\r\n        \"email\": \"vitor@gmail.com\",\r\n        \"address\": \"Rua Melvin Jones\",\r\n        \"password\": \"87654321\",\r\n        \"phone\": \"(48) 99558-7421\",\r\n        \"admin\": false,\r\n        \"relacao_usuario\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/usuarios",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Regras de negócio 2 - Email inválido",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"a0bcd4b3-1f93-481f-b1dc-5e3013a779a7\",\r\n        \"name\": \"Vitor\",\r\n        \"nickname\": \"Vitinho\",\r\n        \"photo\": \"https://cdn-icons-png.flaticon.com/512/3135/3135715.png\",\r\n        \"email\": \"vitorgmailcom\",\r\n        \"address\": \"Rua Melvin Jones\",\r\n        \"password\": \"87654321\",\r\n        \"phone\": \"(48) 99558-7421\",\r\n        \"admin\": false,\r\n        \"relacao_usuario\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/usuarios",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Regras de negócio 3 - O telefone deve ter no máximo 11 dígitos",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"a0bcd4b3-1f93-481f-b1dc-5e3013a779a7\",\r\n        \"name\": \"Vitor\",\r\n        \"nickname\": \"Vitinho\",\r\n        \"photo\": \"https://cdn-icons-png.flaticon.com/512/3135/3135715.png\",\r\n        \"email\": \"vitor@gmail.com\",\r\n        \"address\": \"Rua Melvin Jones\",\r\n        \"password\": \"87654321\",\r\n        \"phone\": \"(48) 99558-74212\",\r\n        \"admin\": false,\r\n        \"relacao_usuario\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/usuarios",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios"
 							]
 						}
 					},
